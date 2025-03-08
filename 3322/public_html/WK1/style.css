@@ -1,0 +1,62 @@
+#logo{
+    background-repeat: no-repeat;
+    background-size: 90% 90%;
+}  
+
+ul {
+
+}
+
+li{
+    display: inline-block;
+    list-style-type: none;
+}
+
+li a{
+
+}
+
+a[target = "_blank"] {
+
+}
+
+a[target = "_blank"]:hover {
+
+}
+	
+.searchInput {
+
+}
+
+.searchButton {
+
+}
+
+#footer{
+
+}
+
+#searchArea {
+
+}
+
+.col-1 {
+
+}
+
+.col-2{
+
+}
+
+.col-2:hover{
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 580px) {  
+
+}

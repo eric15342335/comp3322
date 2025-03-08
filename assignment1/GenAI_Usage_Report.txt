@@ -1,0 +1,5 @@
+GenAI models I have used:
+1. Cursor - Claude 3.5 Sonnet
+* Used for autocompletion on part A, which automates the process of adding the <table><tr><td> for every year, applying <li> to each research projects, naming classes and ids, refactoring CSS rules using CSS variables, and generated the @media queries for small screen devices (350-500vw)
+2. GitHub Copilot - Claude 3.5 Sonnet
+* Used for generating `clip-path: inset();` property in part B.

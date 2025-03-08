@@ -1,0 +1,105 @@
+div {
+    width: 1000px;
+    border-color: grey;
+    border-style: dashed;
+    border-radius: 30px;
+    border-width: 3px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+h1 {
+    font-family: 'Ubuntu';
+    text-align: center;
+}
+p {
+    font-family: 'Lora';
+}
+div p:first-of-type {
+    text-align: right;
+    font-size: 120%;
+    font-style: italic;
+    font-weight: bold;
+}
+cite {
+    font-family: 'papyrus';
+    font-size: 120%;
+    display: inline-block;
+    position: relative;
+    top: calc(-1.2em - 20px); /* 1.2em is from div p:first-of-type, where 20px is the padding of div */
+}
+a {
+    color: black !important;
+    text-decoration: none;
+}
+a:after {
+    content: " (" attr(href) ")";
+}
+a:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    background-color: greenyellow;
+}
+div > p:not(:first-of-type)::first-line {
+    font-weight: bold;
+}
+div > p:nth-of-type(2) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    position: relative;
+}
+div > p:nth-of-type(2)::after {
+    content: url(three_kittens.jpg);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: scale(0.5);
+    transform-origin: top left;
+    clip-path: inset(0 0 0 0 round 2em);
+}
+div > p:nth-of-type(3) {
+    position: relative; /* set the position to relative, so that the image can be positioned relative to this paragraph (nearest positioned ancestor) instead of the div */
+    float: right;
+    margin-right: 50%;
+    margin-bottom: 24px;
+}
+div > p:nth-of-type(3)::after {
+    content: url(kittens_wear_mittens.jpg);
+    position: absolute; /* adjust the position of the image relative to div > p:nth-of-type(3) */
+    right: -125%;
+    top: 0%;
+    transform: scale(0.5);
+    transform-origin: top right;
+    clip-path: ellipse(50% 40% at 50% 50%);
+}
+div > p:nth-of-type(4) {
+    float: none;
+    text-align: left;
+    width: 36%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+}
+div > p:nth-of-type(5) {
+    position: relative;
+    margin-left: 50%;
+    margin-bottom: 24px;
+}
+div > p:nth-of-type(5)::before {
+    position: absolute;
+    left: -65%;
+    float: right;
+    content: url(kitten_rat.jpg);
+    transform: scale(0.8);
+    transform-origin: top left;
+    clip-path: inset(0 round 0 4em 0 4em);
+}
+div > p:nth-of-type(5)::after {
+    content: url(hanging_mittens.png);
+    position: absolute;
+    top: 0;
+    right: -50%;
+    transform: scale(0.2);
+    transform-origin: top left;
+}
