@@ -1,0 +1,248 @@
+/* Base styles for the entire application */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: black;
+    background-color: white;
+    padding: 10px;
+}
+
+/* Header section with decorative lines */
+.header {
+    /* Vertical centering using flexbox */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Decorative lines above and below the header text */
+.header-line {
+    height: 2px; /* Thickness of the line */
+    background-color: black; /* Color of the line */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 0;
+    /* Makes the line extend beyond the header width */
+    width: 140%;
+    position: relative;
+    left: -20%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Search controls container */
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+select {
+    padding: 5px 10px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+/* Two-column layout for results */
+.result-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#stops-container {
+    margin-bottom: 20px;
+}
+
+/* Individual bus stop item styling */
+.stop-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* Label styles for distance and stop information */
+.distance-label, .stop-label {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+/* First letter emphasis for labels */
+.distance-label::first-letter, .stop-name::first-letter, .stop-label::first-letter {
+    font-weight: bold;
+    font-size: 1rem; 
+}
+
+.distance-value {
+    margin-right: 10px;
+}
+
+.stop-name {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Highlight for the selected bus stop */
+.stop-item.selected {
+    background-color: yellow;
+}
+
+/* Loading indicator style */
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Message for when no stops are found */
+.no-stops {
+    padding: 20px;
+    color: #666;
+}
+
+#details-container {
+    margin-top: 20px;
+}
+
+/* Layout for route list and map containers */
+.details-content {
+    /* Side-by-side layout with spacing between elements */
+    display: flex;
+    gap: 20px;
+}
+
+/* Route container takes available space */
+#routes-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+/* Map container has fixed dimensions */
+#map-container {
+    width: 50%;
+    min-width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+}
+
+/* Bus route information styling */
+.route-item {
+    margin-bottom: 15px;
+}
+
+.route-number {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.route-destination {
+    color: #333;
+}
+
+.eta-list {
+    margin-top: 5px;
+}
+
+.eta-label {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.eta-time {
+    color: blue;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.no-routes {
+    padding: 10px;
+    color: #666;
+}
+
+/* Utility class for hidden elements */
+.hidden {
+    display: none;
+}
+
+/* Responsive design for tablet-sized screens */
+@media (max-width: 800px) {
+    /* Switch to single column layout */
+    .result-container {
+        display: block;
+    }
+
+    /* Stack details elements vertically */
+    .details-content {
+        flex-direction: column;
+    }
+
+    /* Make map full width */
+    #map-container {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 500px) {
+    body {
+        padding: 8px 5px;
+    }
+
+    /* Stack search controls vertically */
+    .search-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    /* Smaller map for mobile */
+    #map-container {
+        height: 300px;
+    }
+}
+
+/* Responsive design for very small screens */
+@media (max-width: 350px) {
+    body {
+        padding: 5px;
+    }
+    
+    .stop-item {
+        font-size: 14px;
+    }
+    
+    /* Even smaller map for tiny screens */
+    #map-container {
+        height: 250px;
+    }
+    
+    .details-header {
+        font-size: 14px;
+    }
+    
+    .route-number, .route-destination {
+        font-size: 14px;
+    }
+}

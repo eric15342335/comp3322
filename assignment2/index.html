@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KMB Bus Services</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.3.1/ol.css">
+        <script src="https://cdn.jsdelivr.net/npm/ol@v10.3.1/dist/ol.js"></script>
+        <script defer src="main.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>
+                <div class="header-line"></div>
+                <div class="header-line"></div>
+                KMB Bus Services
+                <div class="header-line"></div>
+                <div class="header-line"></div>
+            </h1>
+        </div>
+
+        <div class="search-container">
+            <label for="radius">Find Nearby Bus Stops Within</label>
+            <select id="radius">
+                <option value="100">100m</option>
+                <option value="200" selected>200m</option> <!-- default required by asm -->
+                <option value="300">300m</option>
+                <option value="400">400m</option>
+                <option value="500">500m</option>
+            </select>
+        </div>
+
+        <div id="stops-container">
+            <div class="loading">Locating nearby bus stops...</div>
+        </div>
+
+        <div id="details-container" class="hidden">
+            <div class="details-content">
+                <div id="routes-container"></div>
+                <div id="map-container"></div>
+            </div>
+        </div>
+    </body>
+</html>

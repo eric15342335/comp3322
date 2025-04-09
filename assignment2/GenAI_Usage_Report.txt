@@ -1,0 +1,10 @@
+GenAI tools used:
+1. GitHub Copilot in VSCode (Claude 3.7 Sonnet (thinking))
+    * Generated HTML file prototype
+    * Suggesting and fixing CSS ruleset issues
+        * e.g.:
+            Prompt: Pls center this div
+            Output: .header-line { position: absolute; left: 50%;}
+    * Add comments to CSS file
+        * Prompt: Can you add extensive comments to this CSS code? I will print the code out for exam so make sure I can understand every lines.
+    * Fixed the Stop ETA dataset filtering (service_type, null ETA values, same route & different service type & duplicate ETA values) in my original code
